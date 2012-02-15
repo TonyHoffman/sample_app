@@ -4,6 +4,7 @@ gem 'rails', '3.2.1'
 
 gem 'sqlite3-ruby', '1.3.3'
 
+gem 'jquery-rails'
 
 group :development, :test do
 	gem 'rspec-rails', '2.6.1'
