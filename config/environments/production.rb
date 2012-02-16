@@ -47,6 +47,9 @@ SampleApp::Application.configure do
 
   # Precompile additional assets (application.js, application.css, and all non-JS/CSS are already added)
   # config.assets.precompile += %w( search.js )
+  
+  # added this when heroku was balking because css wasn't pre-compiled.
+  config.assets.precompile += %w( blueprint/screen.css blueprint/print.css )
 
   # Disable delivery errors, bad email addresses will be ignored
   # config.action_mailer.raise_delivery_errors = false
