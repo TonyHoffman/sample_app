@@ -23,9 +23,9 @@ end
 # added this because heroko wasn't loading because it said it needed
 # blueprint.css to be precompiled. Found this at:
 # http://stackoverflow.com/questions/7300532/blueprint-css-rails-3-1-help
-group :assets do
-  gem 'therubyracer'
-  gem 'sass-rails'
-  gem 'coffee-rails'
-  gem 'uglifier'
-end
+#group :assets do
+# gem 'therubyracer'
+# gem 'sass-rails'
+# gem 'coffee-rails'
+#  gem 'uglifier'
+# end
