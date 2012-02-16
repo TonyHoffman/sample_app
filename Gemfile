@@ -6,6 +6,9 @@ gem 'sqlite3-ruby', '1.3.3'
 
 gem 'jquery-rails'
 
+# it looks like we need this to run on Heroku later
+gem 'pg'
+
 group :development, :test do
 	gem 'rspec-rails', '2.6.1'
 end
