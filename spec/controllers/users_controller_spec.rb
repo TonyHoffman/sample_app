@@ -34,6 +34,12 @@ describe UsersController do
       response.should have_selector("h1>img", :class => "gravatar") #the > says that the image is inside the h1
     end
     
+    it "should have the right path" do
+      get :show, :id => @user
+      response.should have_selector('td>a', :content => user_path(@user),
+                                            :href   => user_path(@user))
+    end
+    
   end
     
     
