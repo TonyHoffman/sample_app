@@ -114,7 +114,9 @@ td.sidebar {
 	margin-bottom: -15px;
 }
 
-
+div.field, div.actions {
+	margin-bottom: 10px;
+}
 
 
 
