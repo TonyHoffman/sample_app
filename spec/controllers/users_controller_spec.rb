@@ -18,6 +18,22 @@ describe UsersController do
       get :show, :id => @user
       assigns(:user) == @user #assigns(:user) is a getter which keys into a map off all assigned instance variables
     end
+    
+    it "should have the right title" do
+      get :show, :id => @user
+      response.should have_selector('title', :content => @user.name)
+    end
+    
+    it "should have the user's name" do
+      get :show, :id => @user
+      response.should have_selector('h1', :content => @user.name)
+    end
+    
+    it "should have a profile image" do
+      get :show, :id => @user
+      response.should have_selector("h1>img", :class => "gravatar") #the > says that the image is inside the h1
+    end
+    
   end
     
     

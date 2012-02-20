@@ -1,6 +1,6 @@
 SampleApp::Application.routes.draw do
   
-  resources :users
+  resources :users # this should give us all the normal CRUD capabilities for users
   #get "users/new"
 
   root :to => 'pages#home'
@@ -9,6 +9,7 @@ SampleApp::Application.routes.draw do
   match '/about', :to => 'pages#about'
   match '/help', :to => 'pages#help'
   match '/signup', :to => 'users#new'
+  #match '/users/:id', :to => 'users#show'
 
 
   # The priority is based upon order of creation:
