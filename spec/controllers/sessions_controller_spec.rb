@@ -17,7 +17,7 @@ describe SessionsController do
   
   describe "Post create" do
     
-    describe "failure" do
+  describe "failure" do
       
       before(:each) do
         @attr = { :email => "", :password => ""}
@@ -35,7 +35,7 @@ describe SessionsController do
       end
     end
     
-    describe "success" do
+  describe "success" do
       
       before(:each) do
         @user = Factory(:user)
@@ -52,8 +52,20 @@ describe SessionsController do
         post :create, :session => @attr
         response.should redirect_to(user_path(@user))
       end
+    end
+    
+  describe "delete 'destroy'" do
+      it "should sign a user out" do
+        test_sign_in(Factory(:user))
+        delete :destroy #issue a delete request to the destroy method
+        controller.should_not be_signed_in
+        response.should redirect_to(root_path)
+        end
+      end
+      
+    end
     
   end
-  end
+  
 
-end
+
