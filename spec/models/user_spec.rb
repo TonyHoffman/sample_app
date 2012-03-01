@@ -5,7 +5,7 @@ describe User do
   before(:each) do
     @attr = { 
       :name => "Example User", 
-      :email => "user@example.com",
+      :email => "user_spec_email@example.com",
       :password => "foobar",
       :password_confirmation => "foobar"
       }
@@ -142,8 +142,8 @@ describe User do
   describe "admin attribute" do
     
     before(:each) do
-      # @user = User.create!(@attr)
-      @user = Factory(:user)
+      @user = User.create!(@attr)
+      # @user = Factory(:user)
     end
       
     it "should respond to admin" do
@@ -159,10 +159,12 @@ describe User do
       @user.should be_admin
     end
     
+  end
+  
     describe "micropost associations" do
     
       before(:each) do
-        @user = User.create(@attr)
+         @user = User.create!(@attr)
         @mp1 = Factory(:micropost, :user => @user, :created_at => 1.day.ago)
         @mp2 = Factory(:micropost, :user => @user, :created_at => 1.hour.ago)        
       end
@@ -181,13 +183,7 @@ describe User do
         Micropost.find_by_id(micropost.id).should be_nil
       end
     end
-    
-    
   end
-  end
-
-
-
 end
   
 
