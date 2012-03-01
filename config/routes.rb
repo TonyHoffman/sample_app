@@ -1,5 +1,7 @@
 SampleApp::Application.routes.draw do
   
+  resources :microposts
+
   get "sessions/new"
 
   resources :users # this should give us all the normal CRUD capabilities for users

@@ -335,7 +335,7 @@ end
       end
         
  # This test has a bug -- the implementation works, but the test fails. Pissed me off.        
-      # it "should not be able to destroy itself" do
+      #  it "should not be able to destroy itself" do
       #   lambda do
       #     delete :destroy, :id => @admin
       #   end.should_not change(User, :count) 
