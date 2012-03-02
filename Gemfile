@@ -12,6 +12,8 @@ gem 'pg'
 gem 'gravatar_image_tag', '1.0.0.pre2'
 gem 'will_paginate'
 
+# gem 'rake', '0.8.7'
+
 group :development, :test do
 	gem 'rspec-rails'
 	gem 'annotate', '~> 2.4.1.beta'
