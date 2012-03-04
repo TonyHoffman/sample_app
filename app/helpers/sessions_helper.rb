@@ -6,15 +6,12 @@ module SessionsHelper
     #@current_user = user
   end
   
-  def current_user=(user)
-    # the above looks wrong, but it is right. It assigns an instance variable @current_user, storing it for later use
-    @current_user = user
-    
-  end
+
   
   def current_user
-    @current_user ||= user_from_remember_token 
-    # above: if current user is nil, then assign user_from_remember_token, second time is true so won't hit the database
+    @current_user ||= user_from_remember_token
+    # above: if current user is nil, then assign user_from_remember_token, 
+    #second time is true so won't hit the database
   end
   
   def signed_in?
@@ -28,6 +25,10 @@ module SessionsHelper
   
   def current_user?(user)
     user == current_user
+  end
+  
+  def authenticate
+    deny_access unless signed_in?
   end
   
   def deny_access
@@ -54,7 +55,6 @@ module SessionsHelper
     def user_from_remember_token
       User.authenticate_with_salt(*remember_token)
       #Above, * unwraps the remember_token to get at the two things inside the array
-      
     end
   
   def remember_token

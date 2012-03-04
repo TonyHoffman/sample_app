@@ -7,6 +7,7 @@ SampleApp::Application.routes.draw do
   resources :users # this should give us all the normal CRUD capabilities for users
   #get "users/new"
   resources :sessions, :only => [:new, :create, :destroy] # the ":only" and hash restricts the full set of CRUD to just those listed
+  resources :microposts, :only => [:create, :destroy]
 
   root :to => 'pages#home'
   

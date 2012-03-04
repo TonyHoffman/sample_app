@@ -28,7 +28,7 @@ class UsersController < ApplicationController
       redirect_to @user, :flash => {:success => "Welcome to the Sample App!"} 
     else
       @title = 'Sign up'
-      render 'new' 
+      render 'new'  
     end
   end
   
@@ -54,10 +54,6 @@ end
   end
 
   private
-  
-  def authenticate
-    deny_access unless signed_in?
-  end
 
   def correct_user
     @user = User.find(params[:id])
