@@ -6,8 +6,12 @@ gem 'sqlite3-ruby', '1.3.3'
 
 gem 'jquery-rails'
 
+
+
 # it looks like we need this to run on Heroku later
 gem 'pg'
+
+gem 'faker', '0.3.1'
 
 gem 'gravatar_image_tag', '1.0.0.pre2'
 gem 'will_paginate'
