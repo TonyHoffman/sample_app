@@ -2,8 +2,12 @@ class PagesController < ApplicationController
 
   def home
     @title = "Home"
-    @micropost = Micropost.new if signed_in?
-  end
+    if signed_in?
+      @micropost = Micropost.new
+      @feed_items = current_user.feed.paginate(:page => params[:page])
+    # @micropost = Micropost.new if signed_in?
+   end
+ end
 
 
   def contact
